@@ -48,8 +48,8 @@ const Intro = () => {
   return (
     <Box
       sx={{
-        py: 8,
-        minHeight: "calc(100vh - 64px)",
+        mt: 6,
+        // minHeight: "calc(100vh - 64px)",
         display: "flex",
         alignItems: "center",
       }}
@@ -119,7 +119,8 @@ const Intro = () => {
                 flex: 1,
                 flexDirection: "column",
                 display: "flex",
-                justifyContent: "center",
+                justifyContent: "flex-start",
+                alignSelf: "flex-start",
                 order: { xs: 1, md: 2 },
               }}
             >
