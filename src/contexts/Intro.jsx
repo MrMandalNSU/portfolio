@@ -24,6 +24,7 @@ const ProfileImage = styled("img")(({ theme }) => ({
   width: "100%",
   height: "auto",
   maxHeight: 300,
+  maxWidth: 300,
   objectFit: "cover",
   borderRadius: theme.spacing(2),
   boxShadow: theme.shadows[5],
@@ -47,7 +48,7 @@ const Intro = () => {
               display: "flex",
               flexDirection: { xs: "column", md: "row" }, // Column on mobile, row on desktop
               alignItems: "center",
-              gap: 4,
+              gap: 1,
             }}
           >
             {/* Text First on Mobile, Left on Desktop */}
@@ -68,17 +69,17 @@ const Intro = () => {
                 sx={{
                   mt: 3,
                   display: "flex",
-                  flexDirection: { xs: "column", sm: "row" }, // Stack on mobile, row on larger screens
-                  gap: 2, // Spacing between buttons
-                  justifyContent: "center", // Center align buttons
-                  alignItems: "center", // Ensure proper alignment
+                  flexDirection: { xs: "column", sm: "row" }, // Stack on mobile, row on desktop
+                  gap: 2,
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
                 <Button
                   variant="contained"
                   color="primary"
                   size="large"
-                  fullWidth={{ xs: true, sm: false }} // Full width on mobile, normal on desktop
+                  sx={{ minWidth: 200 }} // Ensures both buttons have the same width
                 >
                   View My Work
                 </Button>
@@ -86,7 +87,7 @@ const Intro = () => {
                   variant="outlined"
                   color="primary"
                   size="large"
-                  fullWidth={{ xs: true, sm: false }} // Full width on mobile, normal on desktop
+                  sx={{ minWidth: 200 }} // Same width as the first button
                 >
                   Contact Me
                 </Button>
