@@ -46,13 +46,18 @@ const Intro = () => {
           <Box
             sx={{
               display: "flex",
-              flexDirection: { xs: "column", md: "row" }, // Column on mobile, row on desktop
+              flexDirection: { xs: "column", md: "row" }, // Stack on mobile, row on desktop
               alignItems: "center",
-              gap: 1,
+              gap: 4,
             }}
           >
             {/* Text First on Mobile, Left on Desktop */}
-            <TextBox sx={{ order: { xs: 2, md: 1 } }}>
+            <TextBox
+              sx={{
+                flex: 2, // making the text box wider than image
+                order: { xs: 2, md: 1 },
+              }}
+            >
               <Typography variant="h2" component="h1" gutterBottom>
                 Hi, I'm Sudipta Mandal
               </Typography>
@@ -79,7 +84,7 @@ const Intro = () => {
                   variant="contained"
                   color="primary"
                   size="large"
-                  sx={{ minWidth: 200 }} // Ensures both buttons have the same width
+                  sx={{ minWidth: 200 }}
                 >
                   View My Work
                 </Button>
@@ -87,7 +92,7 @@ const Intro = () => {
                   variant="outlined"
                   color="primary"
                   size="large"
-                  sx={{ minWidth: 200 }} // Same width as the first button
+                  sx={{ minWidth: 200 }}
                 >
                   Contact Me
                 </Button>
@@ -100,7 +105,7 @@ const Intro = () => {
                 flex: 1,
                 display: "flex",
                 justifyContent: "center",
-                order: { xs: 1, md: 2 }, // Image first on mobile, second on desktop (right)
+                order: { xs: 1, md: 2 },
               }}
             >
               <ProfileImage src={PROFILE_PHOTO} alt="Profile" />
