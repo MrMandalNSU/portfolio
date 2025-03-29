@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Button, Grid, Paper } from "@mui/material";
+import { Box, Container, Typography, Button, Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
 
 const PROFILE_PHOTO = "./sudipta_dp.png";
@@ -14,8 +14,7 @@ const TextBox = styled(Box)(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
   borderRadius: theme.spacing(1),
   boxShadow: theme.shadows[2],
-  height: "100%",
-  width: "100%",
+  flex: 1, // Ensures equal width with the image container
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
@@ -42,17 +41,21 @@ const Intro = () => {
     >
       <Container maxWidth="lg">
         <OuterPaper elevation={3}>
-          <Grid container spacing={4} alignItems="center">
+          {/* Main Layout Box */}
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", md: "row" }, // Column on mobile, row on desktop
+              alignItems: "center",
+              gap: 4, // Adds spacing between text and image
+            }}
+          >
             {/* Image First on Mobile, Right on Desktop */}
-            <Grid
-              item
-              xs={12}
-              md={6}
-              order={{ xs: 1, md: 2 }}
+            <Box
               sx={{
+                flex: 1, // Ensures equal width with text on desktop
                 display: "flex",
                 justifyContent: "center",
-                alignItems: "center",
               }}
             >
               <ProfileImage
@@ -62,39 +65,37 @@ const Intro = () => {
                   e.target.src = "./sudipta_dp.png";
                 }}
               />
-            </Grid>
+            </Box>
 
-            {/* Text First on Desktop, Below Image on Mobile */}
-            <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
-              <TextBox>
-                <Typography variant="h2" component="h1" gutterBottom>
-                  Hi, I'm Sudipta Mandal
-                </Typography>
-                <Typography variant="body1">
-                  A software engineer with more than three years of industrial
-                  experience. Adequate, organized, dedicated & self-driven
-                  person. I like to explore new things while sticking around my
-                  comfort zone. Love programming and problem-solving. Like to
-                  lead while being efficient at teamwork. Former competitive
-                  programming contestant, current problem setter & judge of NSU
-                  Problem Solvers (NSUPS).
-                </Typography>
-                <Box sx={{ mt: 3 }}>
-                  <Button
-                    variant="contained"
-                    color="primary"
-                    size="large"
-                    sx={{ mr: 2, mb: { xs: 2, sm: 0 } }}
-                  >
-                    View My Work
-                  </Button>
-                  <Button variant="outlined" color="primary" size="large">
-                    Contact Me
-                  </Button>
-                </Box>
-              </TextBox>
-            </Grid>
-          </Grid>
+            {/* Text Section */}
+            <TextBox>
+              <Typography variant="h2" component="h1" gutterBottom>
+                Hi, I'm Sudipta Mandal
+              </Typography>
+              <Typography variant="body1">
+                A software engineer with more than three years of industrial
+                experience. Adequate, organized, dedicated & self-driven person.
+                I like to explore new things while sticking around my comfort
+                zone. Love programming and problem-solving. Like to lead while
+                being efficient at teamwork. Former competitive programming
+                contestant, current problem setter & judge of NSU Problem
+                Solvers (NSUPS).
+              </Typography>
+              <Box sx={{ mt: 3 }}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  size="large"
+                  sx={{ mr: 2, mb: { xs: 2, sm: 0 } }}
+                >
+                  View My Work
+                </Button>
+                <Button variant="outlined" color="primary" size="large">
+                  Contact Me
+                </Button>
+              </Box>
+            </TextBox>
+          </Box>
         </OuterPaper>
       </Container>
     </Box>
