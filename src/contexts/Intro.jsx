@@ -120,6 +120,7 @@ const Intro = () => {
                 flexDirection: "column",
                 display: "flex",
                 justifyContent: "flex-start",
+                alignItems: "center",
                 alignSelf: "flex-start",
                 order: { xs: 1, md: 2 },
               }}
