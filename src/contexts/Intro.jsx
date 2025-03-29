@@ -47,28 +47,11 @@ const Intro = () => {
               display: "flex",
               flexDirection: { xs: "column", md: "row" }, // Column on mobile, row on desktop
               alignItems: "center",
-              gap: 4, // Adds spacing between text and image
+              gap: 4,
             }}
           >
-            {/* Image First on Mobile, Right on Desktop */}
-            <Box
-              sx={{
-                flex: 1, // Ensures equal width with text on desktop
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <ProfileImage
-                src={PROFILE_PHOTO}
-                alt="Profile"
-                onError={(e) => {
-                  e.target.src = "./sudipta_dp.png";
-                }}
-              />
-            </Box>
-
-            {/* Text Section */}
-            <TextBox>
+            {/* Text First on Mobile, Left on Desktop */}
+            <TextBox sx={{ order: { xs: 2, md: 1 } }}>
               <Typography variant="h2" component="h1" gutterBottom>
                 Hi, I'm Sudipta Mandal
               </Typography>
@@ -86,7 +69,7 @@ const Intro = () => {
                   variant="contained"
                   color="primary"
                   size="large"
-                  sx={{ mr: 2, mb: { xs: 2, sm: 0 } }}
+                  sx={{ mr: 2 }}
                 >
                   View My Work
                 </Button>
@@ -95,6 +78,18 @@ const Intro = () => {
                 </Button>
               </Box>
             </TextBox>
+
+            {/* Image First on Mobile, Right on Desktop */}
+            <Box
+              sx={{
+                flex: 1,
+                display: "flex",
+                justifyContent: "center",
+                order: { xs: 1, md: 2 }, // Image first on mobile, second on desktop (right)
+              }}
+            >
+              <ProfileImage src={PROFILE_PHOTO} alt="Profile" />
+            </Box>
           </Box>
         </OuterPaper>
       </Container>
