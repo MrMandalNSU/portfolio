@@ -64,16 +64,30 @@ const Intro = () => {
                 contestant, current problem setter & judge of NSU Problem
                 Solvers (NSUPS).
               </Typography>
-              <Box sx={{ mt: 3 }}>
+              <Box
+                sx={{
+                  mt: 3,
+                  display: "flex",
+                  flexDirection: { xs: "column", sm: "row" }, // Stack on mobile, row on larger screens
+                  gap: 2, // Spacing between buttons
+                  justifyContent: "center", // Center align buttons
+                  alignItems: "center", // Ensure proper alignment
+                }}
+              >
                 <Button
                   variant="contained"
                   color="primary"
                   size="large"
-                  sx={{ mr: 2 }}
+                  fullWidth={{ xs: true, sm: false }} // Full width on mobile, normal on desktop
                 >
                   View My Work
                 </Button>
-                <Button variant="outlined" color="primary" size="large">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  size="large"
+                  fullWidth={{ xs: true, sm: false }} // Full width on mobile, normal on desktop
+                >
                   Contact Me
                 </Button>
               </Box>
