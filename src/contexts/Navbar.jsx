@@ -48,8 +48,17 @@ const Navbar = () => {
   );
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <AppBar component="nav" position="sticky">
+    <Box
+      sx={{
+        width: { xs: "100%", sm: "100%", md: "100%", lg: "70%" },
+        transform: "translateX(-50%)",
+        position: "fixed",
+        top: 0,
+        left: "50%",
+        zIndex: 1100,
+      }}
+    >
+      <AppBar component="nav" position="sticky" sx={{ width: "100%" }}>
         <Toolbar>
           <Typography
             variant="h6"
@@ -79,22 +88,22 @@ const Navbar = () => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      <Box component="nav">
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true,
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
+
+      {/* Mobile Drawer */}
+      <Drawer
+        variant="temporary"
+        open={mobileOpen}
+        onClose={handleDrawerToggle}
+        ModalProps={{
+          keepMounted: true,
+        }}
+        sx={{
+          display: { xs: "block", sm: "none" },
+          "& .MuiDrawer-paper": { boxSizing: "border-box", width: 240 },
+        }}
+      >
+        {drawer}
+      </Drawer>
     </Box>
   );
 };
