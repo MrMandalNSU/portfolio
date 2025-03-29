@@ -39,7 +39,6 @@ const Intro = () => {
               <Typography variant="h2" component="h1" gutterBottom>
                 Hi, I'm Sudipta Mandal
               </Typography>
-              <Typography variant="h5" color="textSecondary"></Typography>
               <Typography variant="body1">
                 A software engineer with more than three years of industrial
                 experience. Adequate, organized, dedicated & self-driven person.
