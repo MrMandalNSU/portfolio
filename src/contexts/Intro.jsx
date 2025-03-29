@@ -43,7 +43,29 @@ const Intro = () => {
       <Container maxWidth="lg">
         <OuterPaper elevation={3}>
           <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+            {/* Image First on Mobile, Right on Desktop */}
+            <Grid
+              item
+              xs={12}
+              md={6}
+              order={{ xs: 1, md: 2 }}
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <ProfileImage
+                src={PROFILE_PHOTO}
+                alt="Profile"
+                onError={(e) => {
+                  e.target.src = "./sudipta_dp.png";
+                }}
+              />
+            </Grid>
+
+            {/* Text First on Desktop, Below Image on Mobile */}
+            <Grid item xs={12} md={6} order={{ xs: 2, md: 1 }}>
               <TextBox>
                 <Typography variant="h2" component="h1" gutterBottom>
                   Hi, I'm Sudipta Mandal
@@ -71,25 +93,6 @@ const Intro = () => {
                   </Button>
                 </Box>
               </TextBox>
-            </Grid>
-
-            <Grid
-              item
-              xs={12}
-              md={6}
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <ProfileImage
-                src={PROFILE_PHOTO}
-                alt="Profile"
-                onError={(e) => {
-                  e.target.src = "./sudipta_dp.png";
-                }}
-              />
             </Grid>
           </Grid>
         </OuterPaper>
