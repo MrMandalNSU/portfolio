@@ -1,5 +1,19 @@
-import { Box, Container, Typography, Button, Paper } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  Button,
+  Paper,
+  IconButton,
+} from "@mui/material";
 import { styled } from "@mui/material/styles";
+import {
+  Facebook,
+  Twitter,
+  LinkedIn,
+  GitHub,
+  Instagram,
+} from "@mui/icons-material";
 
 const PROFILE_PHOTO = "./sudipta_dp.png";
 
@@ -103,12 +117,41 @@ const Intro = () => {
             <Box
               sx={{
                 flex: 1,
+                flexDirection: "column",
                 display: "flex",
                 justifyContent: "center",
                 order: { xs: 1, md: 2 },
               }}
             >
               <ProfileImage src={PROFILE_PHOTO} alt="Profile" />
+              {/* Social Media Buttons */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: 2,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  width: "100%",
+                  mt: 3,
+                }}
+              >
+                <IconButton color="primary" sx={{ fontSize: 40 }}>
+                  <Facebook />
+                </IconButton>
+                <IconButton color="primary" sx={{ fontSize: 40 }}>
+                  <Instagram />
+                </IconButton>
+                <IconButton color="primary" sx={{ fontSize: 40 }}>
+                  <Twitter />
+                </IconButton>
+                <IconButton color="primary" sx={{ fontSize: 40 }}>
+                  <LinkedIn />
+                </IconButton>
+                <IconButton color="primary" sx={{ fontSize: 40 }}>
+                  <GitHub />
+                </IconButton>
+              </Box>
             </Box>
           </Box>
         </OuterPaper>
