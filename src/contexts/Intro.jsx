@@ -15,7 +15,7 @@ const TextBox = styled(Box)(({ theme }) => ({
   borderRadius: theme.spacing(1),
   boxShadow: theme.shadows[2],
   height: "100%",
-  width: "60%",
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "center",
