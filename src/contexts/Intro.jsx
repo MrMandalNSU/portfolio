@@ -75,15 +75,19 @@ const Intro = () => {
               <Typography variant="h2" component="h1" gutterBottom>
                 Hi, I'm Sudipta Mandal
               </Typography>
+
               <Typography variant="body1">
                 A software engineer with more than three years of industrial
-                experience. Adequate, organized, dedicated & self-driven person.
-                I like to explore new things while sticking around my comfort
-                zone. Love programming and problem-solving. Like to lead while
-                being efficient at teamwork. Former competitive programming
-                contestant, current problem setter & judge of NSU Problem
-                Solvers (NSUPS).
+                experience. <br />
+                I like to be adequate, organized, dedicated and self-driven
+                person. Interested in to explore new things while sticking
+                around my comfort zone. Love programming and problem-solving.
+                Like to lead while being efficient at teamwork. Former
+                competitive programming contestant, current problem setter and
+                judge of NSU Problem Solvers (NSUPS). <br />
+                Currently working as Software Engineer (Level 2) at Eucaps AB
               </Typography>
+
               <Box
                 sx={{
                   mt: 3,
